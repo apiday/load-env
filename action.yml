@@ -1,0 +1,10 @@
+name: "Load Environment"
+description: "Load the environment file specific to the environment in input"
+inputs:
+    environment:
+        description: "Name of the environment. The file .github/variables/<environment>.env will be loaded."
+        required: true
+        default: ""
+runs:
+    using: "node16"
+    main: "index.js"
