@@ -6,7 +6,7 @@ try {
     const environmentFilePath = ".github/variables/" + environment + ".env";
     if (!fs.existsSync(environmentFilePath)) {
         process.stderr.write(environmentFilePath + " file was not found.");
-        process.exitCode = 1;
+        process.exitCode = process.env.INPUT_FAIL_IF_NONEXISTENT === "false" ? 0 : 1;
         return;
     }
     const content = fs.readFileSync(environmentFilePath, "utf8");

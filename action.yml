@@ -5,6 +5,10 @@ inputs:
         description: "Name of the environment. The file .github/variables/<environment>.env will be loaded."
         required: true
         default: ""
+    fail_if_nonexistent:
+        description: "Whether the action should fail if no environment file is found. Defaults to true."
+        required: false
+        default: "true"
 runs:
     using: "node16"
     main: "index.js"
